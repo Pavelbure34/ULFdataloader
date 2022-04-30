@@ -35,21 +35,14 @@
             <li>Conda</li>
             <li>Python3</li>
         </ul>
-    </p>
-
-    <p>
         Using Conda and Python3, run the following command.
-        <ul>
-            <li>conda install -c conda-forge allennlp-models allennlp-semparse allennlp-server allennlp-optuna</li>
-        </ul>
     </p>
+
+        conda install -c conda-forge allennlp-models allennlp-semparse allennlp-server allennlp-optuna
 </div>
 
-<div id="3">
-    <h2>How to use this project</h2>
-    
-</div>
 
+<h2 id="3">How to use this project</h2>
 <div id="4">
     <h2>What is an Allen NLP data loader?</h2>
     
