@@ -35,10 +35,10 @@
             <li>Conda</li>
             <li>Python3</li>
         </ul>
-        Using Conda and Python3, run the following command. If you already installed AllenNLP via Conda, please skip this tep, If not, please install AllenNLP via Conda. It will take a while.
+        Please run the following command after runnning the conda virtual environment.
     </p>
-
-        conda install -c conda-forge allennlp-models allennlp-semparse allennlp-server allennlp-optuna
+        
+        pip3 install allennlp
 </div>
 
 <h2 id="3">How to use this project</h2>
