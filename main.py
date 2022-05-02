@@ -1,6 +1,6 @@
-from loader import load 
+from loader import load_ULF as load
 
 def main():
-    load()
+    loader1, loader2 = load(), load(True)
 
 main()

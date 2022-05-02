@@ -34,11 +34,13 @@
         <ul>
             <li>Conda</li>
             <li>Python3</li>
+            <li>AllenNLP</li>
+            <li>PyTorch</li>
         </ul>
         Please run the following command after runnning the conda virtual environment.
     </p>
         
-        pip3 install allennlp
+        pip3 install allennlp torch torchvision
 </div>
 
 <h2 id="3">How to use this project</h2>
