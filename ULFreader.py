@@ -1,8 +1,13 @@
-from typing import Dict, Iterable, List
+from typing import Dict, Iterable
 from allennlp.data import DatasetReader, Instance
 from allennlp.data.fields import Field, LabelField, TextField
 from allennlp.data.token_indexers import SingleIdTokenIndexer, TokenIndexer
-from allennlp.data.tokenizers import Token, Tokenizer, SpacyTokenizer
+from allennlp.data.tokenizers import Tokenizer, SpacyTokenizer
+
+"""
+    This file is a dataset reader class.
+    It takes the file path as an input and takes the parental claass from Allennlp's DatasetReader.
+"""
 
 @DatasetReader.register("ULF")
 class ULFreader(DatasetReader):
@@ -17,17 +22,13 @@ class ULFreader(DatasetReader):
         self._token_indexers = token_indexers or {"tokens": SingleIdTokenIndexer()}
 
     def text_to_instance(self, sentence : str, label : str) -> Instance:
-        # ID, sentence, ULF, ULF_AMR = datum[0], datum[1], datum[2], datum[3]
-
         #1. tokenize sentence
         sentence_field = TextField(
             self._tokenizer.tokenize(sentence), #tokens
             self._token_indexers                #indexing tokens
         )
 
-        fields: Dict[str, Field] = {
-            "sentence": sentence_field
-        }
+        fields: Dict[str, Field] = {label: sentence_field}
         fields["ULF"] = LabelField(label)
         return Instance(fields)
                 
@@ -35,5 +36,5 @@ class ULFreader(DatasetReader):
         data = open(file_path)
         lines = data.readlines()
         for line in lines:
-            yield self.text_to_instance(line.strip(), "sentence")
+            yield self.text_to_instance(line.strip(), "text")
         data.close()

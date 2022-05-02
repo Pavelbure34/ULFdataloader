@@ -40,13 +40,14 @@
         Please run the following command after runnning the conda virtual environment.
     </p>
         
-        pip3 install allennlp torch torchvision
+        pip3 install allennlp
 </div>
 
 <h2 id="3">How to use this project</h2>
 <div id="4">
     <h2>What is an Allen NLP data loader?</h2>
-    
+    It gives you vocabularies and data loaders for raw sentence, ULF-proprocessed and AMR processed data.
+    Using this, anyone can train their model.
 </div>
 
 <div id="5">
@@ -55,10 +56,14 @@
 
 <div id="5-1">
     <h3>Test with ulf-1.0</h3>
+    The dataset of the first official release of annotated ULFs.
+    The dataset is a list of [id, sentence, ULF, ULF-AMR] entries.
 </div>
 
 <div id="5-2">
     <h3>Test with ulf-1.0-stog</h3>
+    A version of ulf-1.0.json with additional preprocessing steps to
+    make it compatible with the sequence-to-graph AMR parser.
 </div>
 
 <div id="6">
