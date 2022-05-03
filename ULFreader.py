@@ -7,6 +7,11 @@ from allennlp.data.tokenizers import Tokenizer, SpacyTokenizer
 """
     This file is a dataset reader class.
     It takes the file path as an input and takes the parental claass from Allennlp's DatasetReader.
+
+    This reader takes the string data as an input and 
+        i)   tokenize it
+        ii)  index tokens 
+    this is built for ULF dataset.
 """
 
 @DatasetReader.register("ULF")
@@ -21,14 +26,14 @@ class ULFreader(DatasetReader):
         self._tokenizer = tokenizer or SpacyTokenizer()
         self._token_indexers = token_indexers or {"tokens": SingleIdTokenIndexer()}
 
-    def text_to_instance(self, sentence : str, label : str) -> Instance:
-        #1. tokenize sentence
-        sentence_field = TextField(
-            self._tokenizer.tokenize(sentence), #tokens
+    def text_to_instance(self, data : str, label : str) -> Instance:
+        #1. tokenize the text
+        data_field = TextField(
+            self._tokenizer.tokenize(data), #tokens
             self._token_indexers                #indexing tokens
         )
 
-        fields: Dict[str, Field] = {label: sentence_field}
+        fields: Dict[str, Field] = {label: data_field}
         fields["ULF"] = LabelField(label)
         return Instance(fields)
                 

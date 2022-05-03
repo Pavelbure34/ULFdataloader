@@ -73,7 +73,7 @@ def load_ULF(isStog = False, _batch_size = 32) -> Dict:
         "vocabularies" : (sentence_vocab, ULF_vocab, AMR_vocab)
     }
     
-def init_loader(vocab, data_reader, file_path, batch_size):
+def init_loader(vocab, data_reader, file_path, batch_size): #helper function
     data_loader = loader(                                  #init the data loader.
         data_reader,
         file_path,
