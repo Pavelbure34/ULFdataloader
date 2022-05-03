@@ -23,6 +23,23 @@
         </a> is a NLP project at the University of Rochester.
         <b>This project is not available for Windows as Allen NLP do not have Windows support yet.</b>
     </p>
+    <ul>
+        <li>loader.py -> holds a function that returns data loaders from ULF data set</li>
+        <li>ULFreader.py -> holds a dataset reader class for ULF dataset</li>
+    </ul>
+    <p>
+    It gives you vocabularies and data loaders for raw sentence, ULF-proprocessed and AMR processed data.
+    Using this, anyone can train their model.
+    ULF dataset has four columns.
+    <ul>
+        <li>ID : dataset ID</li>
+        <li>sentence : raw sentences</li>
+        <li>ULF : ULF preprocessed data</li>
+        <li>ULF-AMR : AMR processed data</li>
+    </ul>
+    This project produces separate vocabularies and namespaces for each label except ID.
+    </p>
+</div>
 </div>
 
 <div id="2">
@@ -34,7 +51,6 @@
             <li>Conda</li>
             <li>Python3</li>
             <li>AllenNLP</li>
-            <li>PyTorch</li>
         </ul>
         Please run the following command after runnning the conda virtual environment.
     </p>
@@ -44,9 +60,11 @@
 
 <div id="3">
     <h2>How to use this project</h2>
-    It gives you vocabularies and data loaders for raw sentence, ULF-proprocessed and AMR processed data.
-    Using this, anyone can train their model.
-</div>
+    Please refer to the following code.
+
+    data_loader2 = loader(True) #ulf-1.0 dataset
+    data_loader2 = loader(False) #ulf1-1.0-stog dataset
+</dvi>
 
 <div id="5">
     <h2>ULF datasets</h2>
