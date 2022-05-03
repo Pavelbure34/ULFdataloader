@@ -55,6 +55,8 @@
         Please run the following command after runnning the conda virtual environment.
     </p>
         
+        conda create allennlp-env
+        conda activate allennlp-env
         pip3 install allennlp
 </div>
 
