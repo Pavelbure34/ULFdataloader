@@ -39,15 +39,12 @@ def load_ULF(isStog = False, _batch_size = 32) -> Dict:
     gen_line = lambda i, n, val : "{}{}".format(val, '\n') if i < n - 1 else val
     n = len(data)
 
-    ULF_lines, AMR_lines = [], []
     for i, datum in enumerate(data):
         ulf, amr = datum[2], datum[3]
         ULF_line, AMR_line = gen_line(i, n, ulf), gen_line(i, n, amr) 
-        ULF_lines.append(ULF_line)
-        AMR_lines.append(AMR_line)
-    ULF_f.writelines(ULF_lines)
-    AMR_f.writelines(AMR_line)
-
+        ULF_f.write(ULF_line)
+        AMR_f.write(AMR_line)
+    
     ALL.close() 
     ULF_f.close()
     AMR_f.close()

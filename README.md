@@ -5,7 +5,6 @@
        <li><a href="#1">About this Project</a></li> 
        <li><a href="#2">Prerequisites</a></li>
        <li><a href="#3">How to use this project</a></li>
-       <li><a href="#4">What is an Allen NLP data loader?</a></li>
        <li><a href="#5">Test with ULF datasets</a></li>
         <ol>
             <li><a href="#5-1">Test with ulf-1.0</a></li>
@@ -43,15 +42,14 @@
         pip3 install allennlp
 </div>
 
-<h2 id="3">How to use this project</h2>
-<div id="4">
-    <h2>What is an Allen NLP data loader?</h2>
+<div id="3">
+    <h2>How to use this project</h2>
     It gives you vocabularies and data loaders for raw sentence, ULF-proprocessed and AMR processed data.
     Using this, anyone can train their model.
 </div>
 
 <div id="5">
-    <h2>Test with ULF datasets</h2>
+    <h2>ULF datasets</h2>
 </div>
 
 <div id="5-1">
